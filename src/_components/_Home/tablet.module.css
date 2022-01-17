@@ -1,0 +1,11 @@
+.homepageCardContainer{
+	flex-direction:column;
+	width:100%;
+}
+.homepageCardContainer >div{
+	margin-bottom:10px;
+	width:100%;
+}
+.homepagecard > h2{
+	background-color:red;
+}

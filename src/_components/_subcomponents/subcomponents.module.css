@@ -1,0 +1,65 @@
+/* INFO BUTTON STYLES */
+.infoContainer{
+	display:inline-flex;
+	flex-direction:row;
+	align-items:center;
+	cursor:pointer;
+	font-size:15px;
+	line-height:15px;
+	padding:2px;
+}
+.infoContainer > span{
+	padding-top: 2px;
+}
+.info{
+	font-size:medium;
+}
+/* END INFO BUTTON STYLES */
+/* Modal Styles */
+.modal {
+  position: fixed;
+  z-index: 1;
+  top:0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.25);
+}
+.modal_content {
+  position: absolute;
+  top: 20%;
+  left: 30%;
+  width: 40%;
+  padding: 20px;
+  border-radius: 5px;
+}
+.close {
+  font-size:small;
+  float: right;
+}
+.close:hover {
+  cursor: pointer;
+}
+/* End Modal Styles */
+/* SearchBillsModal Styles */
+.sbmContainer{
+	display:flex;
+	flex-direction:column;
+	align-items:left;
+	justify-content:center;
+	min-height:50vh;
+	padding:0px 15px 0px 15px;
+}
+.sbmChangePage{
+	display:flex;
+	align-items:center;
+	justify-content:center;
+	align-self:center;
+	flex-grow:0;
+}
+.sbmChangePage > div{
+	cursor: pointer;
+	padding:5px;
+}
+.helpContent{
+	flex-grow:1;
+}

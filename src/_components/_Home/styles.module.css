@@ -1,0 +1,119 @@
+
+.container{
+	display:flex;
+	justify-content: space-between;
+	align-items: center;
+	height:100%;
+	width:100%;
+}
+/* GRIDCONTAINER */
+.gridContainer{
+	display:grid;
+	grid-template-columns:[col1-start] 25% [col1-end col2-start] 25% [col2-end col3-start] 25% [col3-end col4-start] 25% [col4-end];
+}
+.gridContainer > *{
+	padding:2px 0px 2px 5px;
+	display:flex;
+	align-items: center;
+	padding:5px;
+}
+.gridContainer >*:hover{
+	cursor: pointer;
+}
+
+.rowTitle, .rowActivity, .rowDate, .rowSponsor{
+	display:flex;
+	align-items: center;
+	justify-content:center;
+}
+
+ /* HOMEPAGE */
+.homepage{
+	width:100%;
+	min-height: 95vh;
+	display:flex;
+	flex-direction:column;
+	justify-content:center;
+	gap:15px;
+	align-items:center;
+}
+.title{
+	text-align: center;
+	font-weight: 400;
+	font-size: clamp(1rem,7vw,2.5rem);
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+.explore{
+	text-align:center;
+	font-weight: 100;
+	font-size: clamp(4rem,10vw,10rem);
+	text-decoration:underline solid #77bfe0;
+}
+.fontA{
+	font-weight:700;
+}
+.title2{
+	text-align: center;
+	font-weight: 400;
+	font-size: 5em;
+	flex-grow: 0;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+.homepageCardContainer{
+	display:flex;
+	background:#77bfe0ca;
+	justify-content:space-evenly;
+	align-items:center;
+	width:100%;
+	flex-grow:20;
+}
+
+/* HOMEPAGE CARD CSS */
+.homepagecard{
+	display:flex;
+	flex-direction: column;
+	justify-content: space-around;
+	align-items: stretch;
+	text-align: center;
+	border-radius: 5px;
+	width:28%;
+	padding-top:10px;
+}
+.homepagecard > div{
+	text-align: center;
+	opacity:0;
+	width:100%;
+	padding:0% 10% 0% 10%;
+	flex-grow:5;
+	font-weight: 500;
+	font-size: 1.5em;
+}
+
+.homepagecard > h2{
+	flex-grow:3;
+
+}
+.homepagecard > h2:hover{
+	cursor:pointer;
+}
+.homepagecard > h4{
+	cursor:pointer;
+	align-self:center;
+	border-style: none;
+	border-radius: 2px;
+	opacity:0;
+	font-weight: 800;
+	font-size: 1.75em;
+	width:65px;
+	text-align: center;
+}
+.homepagecard > h4 > *{
+	text-decoration: none;
+	color:inherit
+}
+ /* END HOMEPAGE CARD CSS */
+ /* FOOTER CONTENT */

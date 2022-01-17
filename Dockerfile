@@ -2,14 +2,11 @@ FROM node:12
 
 WORKDIR /frontend
 
-COPY package*.json ./
+COPY package.json ./
+COPY  /build ./
 
-RUN npm install
-
-COPY . .
-
-ENV PORT=8080
+RUN ["npm", "install", "serve"]
 
 EXPOSE 8080
 
-CMD [ "npm", "start" ]
+CMD ["npm","run","serveApp"]

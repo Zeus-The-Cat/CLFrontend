@@ -10,8 +10,11 @@ const useStyles = makeStyles((theme) => ({
   paper: {
     padding: theme.spacing(2),
     textAlign: 'center',
-    color: theme.palette.text.secondary,
-    height:'full'
+	display:'flex',
+	flexDirection:'column',
+	justifyContent:'center',
+	alignItems:'center',
+    height:'86vh',
   },
 }));
 
@@ -23,7 +26,7 @@ const Contact = () => {
       <Grid container spacing={1}>
         <Grid item xs={12}>
           <Paper className={classes.paper}>
-            <h2>Clear Legislation is still under development.</h2> 
+            <h2>Clear Legislation is still under development.</h2>
             <h2>Any questions, suggestions, or general inquiries can be addressed to ClearLegislation@gmail.com </h2>
           </Paper>
         </Grid>

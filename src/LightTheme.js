@@ -1,11 +1,6 @@
-import { createMuiTheme } from '@material-ui/core/styles'
+import { createTheme } from '@material-ui/core/styles'
 
-const Theme = createMuiTheme({
-    props:{
-        MuiButtonBase:{
-            disableRipple:true,
-        }
-    },
+const LightTheme = createTheme({
     transitions: {
         duration:{
             shortest:150,
@@ -25,24 +20,49 @@ const Theme = createMuiTheme({
             // Objects leave the screen at full velocity. They do not decelerate when off-screen.
             easeIn: 'cubic-bezier(0.4, 0, 1, 1)',
             // The sharp curve is used by objects that may return to the screen at any time.
-            sharp: 'cubic-bezier(0.4, 0, 0.6, 1)', 
+            sharp: 'cubic-bezier(0.4, 0, 0.6, 1)',
         }
     },
-    palette:{
-        background:{
-            paper:'#fff',
-            main:'#BAD4DE'
+    overrides: {
+        // Name of the component
+        MuiFormLabel: {
+            // Name of the slot
+            root: {
+              // Some CSS
+              color: '#000000',
+            },
         },
+    },
+    palette:{
+		type:'light',
+		common:{
+			white:'#FFF',
+			black:'#000',
+		},
+		background:{
+			default:'#f6f8fa',
+			paper:'#fff',
+		},
         primary:{
-            main:'#1976d2',
+            main:'#77bfe0',
+			light: '#b4ffff',
+			dark:'#3bacb8',
         },
         secondary:{
-            main:'#33312E'
+            main:'#ffb74d',
+			light:'#ffe97d',
+			dark:'#c88719',
         },
         warning:{
             main:'#D56062'
         },
+		text:{
+			primary:'#000000',
+			secondary:'#ffffff',
+			disabled:'rgba(0, 0, 0, 0.38)'
+		}
     },
+	spacing:5,
 });
 
-export default Theme;
+export default LightTheme;

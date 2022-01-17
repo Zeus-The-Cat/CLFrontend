@@ -33,14 +33,14 @@ const useStyles = makeStyles(theme=>({
   navText:{
     paddingLeft:7,
     alignItems: 'center',
-    color:theme.palette.primary.light
+    color:theme.palette.primary.dark
   },
   navIcon:{
     alignItems: 'center',
     color:theme.palette.primary.main
   },
   homeIcon:{
-    color: theme.palette.primary.contrastText,
+    color: theme.palette.text.primary,
   },
   container:{
     backgroundColor: theme.palette.primary.main,
@@ -49,16 +49,16 @@ const useStyles = makeStyles(theme=>({
     flexDirection:'row'
   },
   title:{
-    color:theme.palette.primary.contrastText,
+    color:theme.palette.text.primary,
     fontWeight:300,
     borderLeftStyle:'solid',
-    borderColor:theme.palette.primary.contrastText,
+    borderColor:theme.palette.background.default,
     paddingLeft:'0.5em',
     fontSize:'2.5em',
   }
 }));
 
-const Navigation = () => {
+const Navigation = (props) => {
   const classes = useStyles();
   const [navOpened, setNavOpened] = useState(false);
 
@@ -73,7 +73,7 @@ const Navigation = () => {
   function changeText(text) {
     switch(text){
       case 'CompareLeg':
-        return 'Compare'        
+        return 'Compare'
       default:
         return text
     }
@@ -121,7 +121,7 @@ const Navigation = () => {
               {list('left')}
             </Drawer>
           </div>
-          <div className={classes.title}> Clear Legislation</div>
+          <div className={classes.title}> Clear <b>Legislation</b></div>
         </div>
     </React.Fragment>
   );

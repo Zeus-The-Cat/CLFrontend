@@ -1,0 +1,15 @@
+.default{
+    background-color: var(--terminal-background);
+    color: var(--terminal-color);
+    border-radius: 10px;
+    padding:10px;
+    border-color: var(--terminal-color);
+    box-shadow:1px 0px 12px -0px var(--terminal-color);
+
+}
+.default:hover{
+    cursor: pointer;
+    border-color:var(--terminal-grapefruit);
+    color:var(--terminal-grapefruit);
+    box-shadow:1px 0px 15px -0px var(--terminal-grapefruit);
+}

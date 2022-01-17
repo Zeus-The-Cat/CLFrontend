@@ -15,12 +15,16 @@ const useStyles = makeStyles((theme) => ({
     whiteSpace:'auto'
   },contacts: {
     display:'flex',
-    alignItems: 'center'
+    alignItems: 'center',
   },totalVotes:{
     color:'green',
   }, missedVotes:{
     color:'red',
-  }
+},portrait:{
+    '@media (max-width: 500px)':{
+        maxHeight:200,
+    }
+}
 }));
 
 
@@ -31,17 +35,17 @@ const Content = (props) => {
       return key.split('.').reduce(function(o, x) {
           return (typeof o == 'undefined' || o === null) ? o : o[x];
       }, obj);
-    } 
+    }
 
     const openInNewTab = (url) => {
       const newWindow = window.open(url, '_blank', 'noopener,noreferrer')
       if (newWindow) newWindow.opener = null
     }
-    
+
     const legislatorImage = (resolution) => {
-        if(get(props, 'data.bioguide') !== '0' && get(props,'data.bioguide')){ 
-            return (<img alt={`${get(props, 'data.full_name')} portrait`} className={classes.portrait}
-                src={`https://theunitedstates.io/images/congress/${resolution}/${get(props,'data.bioguide')}.jpg`} 
+        if(get(props, 'data.id') !== '0' && get(props,'data.id')){
+            return (<img alt={`${get(props, 'data.fullname')} portrait`} className={classes.portrait}
+                src={`https://theunitedstates.io/images/congress/${resolution}/${get(props,'data.id')}.jpg`}
                 />)
         }else{
         return <img alt='Not available' src="https://icon-library.net//images/no-profile-picture-icon/no-profile-picture-icon-11.jpg" width="275" />
@@ -51,7 +55,7 @@ const Content = (props) => {
   return (
     <div className={classes.root}>
       <Grid container spacing={1}>
-        <Grid item style={{float:'left'}} sm={12}>
+        <Grid item style={{display:'flex',justifyContent:'center'}} sm={12}>
             {legislatorImage('225x275')}<br/>
         </Grid>
         <Grid container className={classes.contacts}>
@@ -62,8 +66,8 @@ const Content = (props) => {
             </IconButton>
           </Grid>
           <Grid item sm={3}>
-            <div aria-label="Phone Number">
-              <PhoneForwardedIcon fontSize="large" className={classes.phoneIcon} />
+            <div aria-label="Phone Number" style={{display:'flex',flexDirection:'column',alignItems:'center'}}>
+              <PhoneForwardedIcon fontSize="medium" className={classes.phoneIcon} />
               <p className={classes.phoneNumber}>{get(props,'data.phone')}</p>
             </div>
           </Grid>
@@ -83,13 +87,7 @@ const Content = (props) => {
             </IconButton>
           </Grid>
         </Grid>
-        <Grid item  sm={6}>
-          Total Votes: <span className={classes.totalVotes}>{get(props,'data.total_votes')}</span>
-        </Grid>
-        <Grid item  sm={6}>
-          Missed Votes: <span className={classes.missedVotes}>{get(props,'data.missed_votes')}</span>
-        </Grid>
-       </Grid> 
+       </Grid>
     </div>
   );
 };
